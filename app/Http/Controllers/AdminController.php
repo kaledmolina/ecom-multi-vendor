@@ -56,8 +56,12 @@ class AdminController extends Controller
         }
 
         $data->save();
+        $notification = array(
+            'message' => 'Admin Profile Updated Successfully',
+            'alert-type' => 'success'
+        );
 
-        return redirect()->back();
+        return redirect()->back()->with($notification);
 
     } // End Mehtod 
 }
